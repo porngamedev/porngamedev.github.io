@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>:root{--background-body:#202b38;--background:#161f27;--background-alt:#1a242f;--selection:#1c76c5;--text-main:#dbdbdb;--text-bright:#fff;--text-muted:#a9b1ba;--links:#41adff;--focus:rgba(0,150,191,0.67);--border:#526980;--code:#ffbe85;--animation-duration:0.1s;--button-base:#0c151c;--button-hover:#040a0f;--scrollbar-thumb:var(--button-hover);--scrollbar-thumb-hover:#000;--form-placeholder:#a9a9a9;--form-text:#fff;--variable:#d941e2;--highlight:#efdb43;--select-arrow:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23efefef'%3E%3Cpath d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 00-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/%3E%3C/svg%3E")}html{scrollbar-color:#040a0f #202b38;scrollbar-color:var(--scrollbar-thumb) var(--background-body);scrollbar-width:thin}body{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Segoe UI Emoji,Apple Color Emoji,Noto Color Emoji,sans-serif;line-height:1.4;max-width:800px;margin:20px auto;padding:0 10px;word-wrap:break-word;color:#dbdbdb;color:var(--text-main);background:#202b38;background:var(--background-body);text-rendering:optimizeLegibility}button,input,textarea{transition:background-color .1s linear,border-color .1s linear,color .1s linear,box-shadow .1s linear,transform .1s ease;transition:background-color var(--animation-duration) linear,border-color var(--animation-duration) linear,color var(--animation-duration) linear,box-shadow var(--animation-duration) linear,transform var(--animation-duration) ease}h1{font-size:2.2em;margin-top:0}h1,h2,h3,h4,h5,h6{margin-bottom:12px;margin-top:24px}h1,h2,h3,h4,h5,h6,strong{color:#fff;color:var(--text-bright)}b,h1,h2,h3,h4,h5,h6,strong,th{font-weight:600}q:after,q:before{content:none}blockquote,q{border-left:4px solid rgba(0,150,191,.67);border-left:4px solid var(--focus);margin:1.5em 0;padding:.5em 1em;font-style:italic}blockquote>footer{font-style:normal;border:0}address,blockquote cite{font-style:normal}a[href^=mailto\:]:before{content:"📧 "}a[href^=tel\:]:before{content:"📞 "}a[href^=sms\:]:before{content:"💬 "}mark{background-color:#efdb43;background-color:var(--highlight);border-radius:2px;padding:0 2px;color:#000}a>code,a>strong{color:inherit}button,input[type=button],input[type=checkbox],input[type=radio],input[type=range],input[type=reset],input[type=submit],select{cursor:pointer}input,select{display:block}[type=checkbox],[type=radio]{display:initial}button,input,select,textarea{color:#fff;color:var(--form-text);background-color:#161f27;background-color:var(--background);font-family:inherit;font-size:inherit;margin-right:6px;margin-bottom:6px;padding:10px;border:none;border-radius:6px;outline:none}button,input[type=button],input[type=reset],input[type=submit]{background-color:#0c151c;background-color:var(--button-base);padding-right:30px;padding-left:30px}button:hover,input[type=button]:hover,input[type=reset]:hover,input[type=submit]:hover{background:#040a0f;background:var(--button-hover)}input[type=color]{min-height:2rem;padding:8px;cursor:pointer}input[type=checkbox],input[type=radio]{height:1em;width:1em}input[type=radio]{border-radius:100%}input{vertical-align:top}label{vertical-align:middle;margin-bottom:4px;display:inline-block}button,input:not([type=checkbox]):not([type=radio]),input[type=range],select,textarea{-webkit-appearance:none}textarea{display:block;margin-right:0;box-sizing:border-box;resize:vertical}textarea:not([cols]){width:100%}textarea:not([rows]){min-height:40px;height:140px}select{background:#161f27 url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='63' width='117' fill='%23efefef'%3E%3Cpath d='M115 2c-1-2-4-2-5 0L59 53 7 2a4 4 0 00-5 5l54 54 2 2 3-2 54-54c2-1 2-4 0-5z'/%3E%3C/svg%3E") calc(100% - 12px) 50%/12px no-repeat;background:var(--background) var(--select-arrow) calc(100% - 12px) 50%/12px no-repeat;padding-right:35px}select::-ms-expand{display:none}select[multiple]{padding-right:10px;background-image:none;overflow-y:auto}button:focus,input:focus,select:focus,textarea:focus{box-shadow:0 0 0 2px rgba(0,150,191,.67);box-shadow:0 0 0 2px var(--focus)}button:active,input[type=button]:active,input[type=checkbox]:active,input[type=radio]:active,input[type=range]:active,input[type=reset]:active,input[type=submit]:active{transform:translateY(2px)}button:disabled,input:disabled,select:disabled,textarea:disabled{cursor:not-allowed;opacity:.5}::-moz-placeholder{color:#a9a9a9;color:var(--form-placeholder)}:-ms-input-placeholder{color:#a9a9a9;color:var(--form-placeholder)}::-ms-input-placeholder{color:#a9a9a9;color:var(--form-placeholder)}::placeholder{color:#a9a9a9;color:var(--form-placeholder)}fieldset{border:1px solid rgba(0,150,191,.67);border:1px solid var(--focus);border-radius:6px;margin:0 0 12px;padding:10px}legend{font-size:.9em;font-weight:600}input[type=range]{margin:10px 0;padding:10px 0;background:transparent}input[type=range]:focus{outline:none}input[type=range]::-webkit-slider-runnable-track{width:100%;height:9.5px;-webkit-transition:.2s;transition:.2s;background:#161f27;background:var(--background);border-radius:3px}input[type=range]::-webkit-slider-thumb{box-shadow:0 1px 1px #000,0 0 1px #0d0d0d;height:20px;width:20px;border-radius:50%;background:#526980;background:var(--border);-webkit-appearance:none;margin-top:-7px}input[type=range]:focus::-webkit-slider-runnable-track{background:#161f27;background:var(--background)}input[type=range]::-moz-range-track{width:100%;height:9.5px;-moz-transition:.2s;transition:.2s;background:#161f27;background:var(--background);border-radius:3px}input[type=range]::-moz-range-thumb{box-shadow:1px 1px 1px #000,0 0 1px #0d0d0d;height:20px;width:20px;border-radius:50%;background:#526980;background:var(--border)}input[type=range]::-ms-track{width:100%;height:9.5px;background:transparent;border-color:transparent;border-width:16px 0;color:transparent}input[type=range]::-ms-fill-lower,input[type=range]::-ms-fill-upper{background:#161f27;background:var(--background);border:.2px solid #010101;border-radius:3px;box-shadow:1px 1px 1px #000,0 0 1px #0d0d0d}input[type=range]::-ms-thumb{box-shadow:1px 1px 1px #000,0 0 1px #0d0d0d;border:1px solid #000;height:20px;width:20px;border-radius:50%;background:#526980;background:var(--border)}input[type=range]:focus::-ms-fill-lower,input[type=range]:focus::-ms-fill-upper{background:#161f27;background:var(--background)}a{text-decoration:none;color:#41adff;color:var(--links)}a:hover{text-decoration:underline}code,samp,time{background:#161f27;background:var(--background);color:#ffbe85;color:var(--code);padding:2.5px 5px;border-radius:6px;font-size:1em}pre>code{padding:10px;display:block;overflow-x:auto}var{color:#d941e2;color:var(--variable);font-style:normal;font-family:monospace}kbd{background:#161f27;background:var(--background);border:1px solid #526980;border:1px solid var(--border);border-radius:2px;color:#dbdbdb;color:var(--text-main);padding:2px 4px}img,video{max-width:100%;height:auto}hr{border:none;border-top:1px solid #526980;border-top:1px solid var(--border)}table{border-collapse:collapse;margin-bottom:10px;width:100%;table-layout:fixed}table caption,td,th{text-align:left}td,th{padding:6px;vertical-align:top;word-wrap:break-word}thead{border-bottom:1px solid #526980;border-bottom:1px solid var(--border)}tfoot{border-top:1px solid #526980;border-top:1px solid var(--border)}tbody tr:nth-child(2n){background-color:#161f27;background-color:var(--background)}tbody tr:nth-child(2n) button{background-color:#1a242f;background-color:var(--background-alt)}tbody tr:nth-child(2n) button:hover{background-color:#202b38;background-color:var(--background-body)}::-webkit-scrollbar{height:10px;width:10px}::-webkit-scrollbar-track{background:#161f27;background:var(--background);border-radius:6px}::-webkit-scrollbar-thumb{background:#040a0f;background:var(--scrollbar-thumb);border-radius:6px}::-webkit-scrollbar-thumb:hover{background:#000;background:var(--scrollbar-thumb-hover)}::-moz-selection{background-color:#1c76c5;background-color:var(--selection);color:#fff;color:var(--text-bright)}::selection{background-color:#1c76c5;background-color:var(--selection);color:#fff;color:var(--text-bright)}details{display:flex;flex-direction:column;align-items:flex-start;background-color:#1a242f;background-color:var(--background-alt);padding:10px 10px 0;margin:1em 0;border-radius:6px;overflow:hidden}details[open]{padding:10px}details>:last-child{margin-bottom:0}details[open] summary{margin-bottom:10px}summary{display:list-item;background-color:#161f27;background-color:var(--background);padding:10px;margin:-10px -10px 0;cursor:pointer;outline:none}summary:focus,summary:hover{text-decoration:underline}details>:not(summary){margin-top:0}summary::-webkit-details-marker{color:#dbdbdb;color:var(--text-main)}dialog{background-color:#1a242f;background-color:var(--background-alt);color:#dbdbdb;color:var(--text-main);border-radius:6px;border:#526980;border-color:var(--border);padding:10px 30px}dialog>header:first-child{background-color:#161f27;background-color:var(--background);border-radius:6px 6px 0 0;margin:-10px -30px 10px;padding:10px;text-align:center}dialog::-webkit-backdrop{background:rgba(0,0,0,.61);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}dialog::backdrop{background:rgba(0,0,0,.61);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}footer{border-top:1px solid #526980;border-top:1px solid var(--border);padding-top:10px;color:#a9b1ba;color:var(--text-muted)}body>footer{margin-top:40px}@media print{body,button,code,details,input,pre,summary,textarea{background-color:#fff}button,input,textarea{border:1px solid #000}body,button,code,footer,h1,h2,h3,h4,h5,h6,input,pre,strong,summary,textarea{color:#000}summary::marker{color:#000}summary::-webkit-details-marker{color:#000}tbody tr:nth-child(2n){background-color:#f2f2f2}a{color:#00f;text-decoration:underline}}li{margin-bottom:8px}</style>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="theme-color" content="#202b38">
+
+    <link rel="canonical" href="https://abc.com">
+    <meta name="description" content="This is a collection of (hopefully) helpful resources and assets for adult / sex or porn game developers.">
+    <meta name="author" content="https://github.com/porngamedev">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Porn Game Dev Resources">
+    <meta property="og:description" content="This is a collection of (hopefully) helpful resources and assets for adult / sex or porn game developers.">
+    <meta property="og:url" content="https://abc.com">
+    <meta property="og:site_name" content="Porn Game Dev Resources">
+
+    <meta property="article:author" content="https://github.com/porngamedev">
+    <meta property="article:modified_time" content="2023-01-14T00:00:00.000+0000">
+    <meta property="article:published_time" content="2023-01-14T00:00:00.000+0000">
+    <title>Porn Game Dev Resources</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Porn Game Dev Resources</h1>
+      <p>This is a collection of (hopefully) helpful resources for adult / sex or porn game developers. Most of the listed resources are free or at least offer a free tier. Also the licenses offered are such, that a commercial use is allowed.</p>
+      <p>The list is certainly neither complete nor error-free. If you want to add or correct a link, contact me via GitHub (<a href="https://github.com/porngamedev">porngamedev</a>) or F95Zone (<a href="https://f95zone.to/members/the-geek.4981756/">the-geek</a>).</p>
+      <p>I wish you much success in developing your game!</p>
+      <hr>
+      <h2>Assets & Resources</h2>
+      <ul>
+        <li>🔞 <a href="https://itch.io/game-assets/">itch.io Game Assets</a></li>
+        <li>🔞 <a href="https://www.dlsite.com/maniax/tool">DLsite Creator Assets</a></li>
+        <li>
+          <a href="https://lemmasoft.renai.us/forums/viewforum.php?f=52">Lemma Soft Forums</a>
+          <span>- Forum with many free graphics, music and sounds for visual novels</span>
+        </li>
+        <li>
+          <a href="https://opengameart.org/">OpenGameArt</a>
+          <span>- Lots of free 2D graphics, 3D models, textures, music, sounds and more</span>
+        </li>
+        <li>
+          <a href="https://assetstore.unity.com/">Unity Asset Store</a>
+          <span>- A lot of resources for Unity games</span>
+          <code>Unity</code>
+        </li>
+      </ul>
+      <h3>3D Assets</h3>
+      <ul>
+        <li>
+          🔞 <a href="https://www.renderosity.com/">Renderosity</a>
+          <code>Poser / Daz 3D</code>
+          <code>Unity</code>
+          <code>Unreal Engine</code>
+        </li>
+        <li>
+          🔞 <a href="https://www.renderotica.com/">Renderotica</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          🔞 <a href="https://hub.virtamate.com/">Virt-a-Mate Hub</a>
+          <code>Virt-a-Mate</code>
+        </li>
+        <li>
+          🔞 <a href="https://www.cgtrader.com/">CGTrader</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          🔞 <a href="https://smutba.se/">SmutBase</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          🔞 <a href="https://www.turbosquid.com/">TurboSquid</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          🔞 <a href="https://www.most-digital-creations.com/">Digital Creations by Adam Thwaites</a> 
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          🔞 <a href="3dexport.com/">3DExport</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://www.daz3d.com/shop/">Daz 3D Shop</a>
+          <span>- Official Daz 3D shop</span>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://www.daz3d.com/forums/categories/freebies">Daz 3D Freebies Forum</a>
+          <span>- Freebies section in Daz 3D forum</span>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://zonegfx.com/">ZoneGfx</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://www.evilinnocence.com/">EvilInnocence</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://freedom-of-art.ucoz.com/">Freedom of Art</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://fantasiesrealm.com/market/">Fantasies Realm Market</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://inlitestudio.com/">inLite Studio</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://sites.google.com/site/mcasualsdazscripts/">mCasual's Daz Resources</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="http://www.digi-dotz.com/">Digi-Dotz</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://www.vanishingpoint.biz/">Vanishing Point</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://www.forender.com/">FoRender</a>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://www.blendswap.com/">Blend Swap</a>
+          <code>Blender</code>
+        </li>
+        <li>
+          <a href="https://www.wilmapsdigitalcreations.co.uk/">Wilmap's Digital Creations</a>
+          <span>- Mostly clothes</span>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="http://www.optitex-dynamiccloth.com/">OptiTex Dynamic Clothes</a>
+          <span>- Clothes for Poser and Daz 3D</span>
+          <code>Poser / Daz 3D</code>
+        </li>
+        <li>
+          <a href="https://sharecg.com/">ShareCG</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://free3d.com/">Free3D</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://open3dlab.com/">Open3DLab</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://sfmlab.com/">SFMLab</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://archive3d.net/">Archive 3D</a>
+          <code>Various 3D Formats</code>
+        </li>
+        <li>
+          <a href="https://www.blender-models.com/">Blender 3D Models</a>
+          <code>Blender</code>
+        </li>
+      </ul>
+      <h3>2D Assets</h3>
+      <ul>
+        <li>
+          <a href="https://plaza-us.komodo.jp/collections/dlcs">Komodo Plaza</a>
+          <code>RPG Maker</code>
+          <code>Visual Novel Maker</code>
+        </li>
+        <li>
+          <a href="https://rpgmaker.net/resources/">rpgmaker.net Resources</a>
+          <code>RPG Maker</code>
+          <code>Visual Novel Maker</code>
+        </li>
+      </ul>
+      <h3>Textures</h3>
+      <ul>
+        <li><a href="https://freestocktextures.com/">Free Stock Textures</a></li>
+        <li>
+          <a href="https://gametextures.com/">Game Textures</a>
+          <span>- Paid textures but also some freebies</span>
+        </li>
+      </ul>
+      <h3>Music</h3>
+      <ul>
+        <li><a href="https://filmmusic.io/">filmmusic.io</a></li>
+        <li><a href="https://freepd.com/">FreePD.com</a></li>
+        <li><a href="https://freemusicarchive.org/">Free Music Archive</a></li>
+        <li><a href="https://incompetech.com/">incompetech.com</a></li>
+        <li><a href="http://www.openmusicarchive.org/">Open Music Archive</a></li>
+        <li><a href="https://bandcamp.com/tag/creative-commons">Bandcamp</a></li>
+      </ul>
+      <h3>Sounds</h3>
+      <ul>
+        <li><a href="https://freesound.org/">freesound.org</a></li>
+        <li><a href="https://sonniss.com/gameaudiogdc">GDC Game Audio Bundles</a></li>
+        <li><a href="http://soundbible.com/royalty-free-sounds-1.html">Sound Bible</a></li>
+        <li><a href="https://gamesounds.xyz/">gamesounds.xyz</a></li>
+      </ul>
+      <hr>
+      <h2>Communities</h2>
+      <ul>
+        <li>
+          🔞 <a href="https://f95zone.to/">F95zone</a>
+          <span>- Probably the biggest community for adult and porn games</span>
+        </li>
+        <li>
+          🔞 <a href="https://www.reddit.com/r/lewdgames/">LewdGames Reddit Community</a>
+        </li>
+        <li>
+          🔞 <a href="https://www.reddit.com/r/NSFWgaming/">NSFWgaming Reddit Community</a>
+        </li>
+        <li>
+          🔞 <a href="https://www.reddit.com/r/AndroidNSFWgaming/">Android NSFWgaming Reddit Community</a>
+        </li>
+        <li>
+          🔞 <a href="https://www.reddit.com/r/adultgamedev/">Adult Game Dev Reddit Community</a>
+        </li>
+        <li>
+          🔞 <a href="https://www.reddit.com/r/adultvrgames/">Adult VR Games Reddit Community</a>
+        </li>
+        <li>
+          🔞 <a href="https://lemmasoft.renai.us/">Lemma Soft Forums</a>
+          <span>- A community all about visual novels. Register to see and post adult content.</span>
+        </li>
+        <li>
+          🔞 <a href="https://www.newgrounds.com/">Newgrounds</a>
+          <span>- Entertainment website where developers can upload and promote their browser-playable games</span>
+        </li>
+        <li>
+          🔞 <a href="https://ulmf.org/">Unofficial LineMarvel Forum</a>
+        </li>
+      </ul>
+      <hr>
+      <h2>Monetization</h2>
+      <ul>
+        <li>
+          <a href="https://www.patreon.com/">Patreon</a>
+          <span>- Sell subscriptions and rewards for your game</span>
+        </li>
+        <li>
+          <a href="https://graphtreon.com/">Graphtreon</a>
+          <span>- Website that tracks the income and patrons of creators on the Patreon platform.</span>
+        </li>
+        <li>
+          <a href="https://www.subscribestar.com/">SubscribeStar</a>
+          <span>- Alternative to Patreon</span>
+        </li>
+        <li>
+          <a href="https://itch.io/">Itch.io</a>
+          <span>- Online platform for hosting, distributing and selling indie games</span>
+        </li>
+        <li><a href="https://steampowered.com">Steam</a></li>
+        <li><a href="https://steampowered.com">GOG.com</a></li>
+      </ul>
+      <hr>
+      <h2>Tutorials</h2>
+      <ul>
+        <li>
+          🎞 <a href="https://www.youtube.com/@vimi">Visual Novel Design</a>
+          <code>Ren'Py</code>
+        </li>
+        <li>
+          🎞 <a href="https://www.youtube.com/@GameDeveloperTraining">Game Developer Training</a>
+          <code>Daz 3D</code>
+          <code>Blender</code>
+          <code>Ren'Py</code>
+          <code>C#</code>
+        </li>
+        <li>
+          🎞 <a href="https://www.youtube.com/@ITRoy">IT Roy</a>
+          <span>- Tutorials for Daz 3d and the creation of visual novels</span>
+          <code>Daz 3D</code>
+        </li>
+        <li>
+          🎞 <a href="https://www.youtube.com/@CaptainVarghoss">Captain Varghoss</a>
+          <span>- Virt-a-Mate Tutorials</span>
+          <code>Virt-a-Mate</code>
+        </li>
+        <li>
+          📕 <a href="https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro">Blender 3D: Noob to Pro</a>
+          <span>- free eBook</span>
+          <code>Blender</code>
+        </li>
+        <li>
+          <a href="https://www.lezcave.com/renpy-tutorials/">Lezalith's Programming Cave</a>
+          <code>Ren'Py</code>
+        </li>
+        <li>
+          <a href="https://rpgmaker.net/tutorials/">rpgmaker.net Tutorials</a>
+          <code>RPG Maker</code>
+        </li>
+        <li>
+          <a href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=34131">Lemma Soft Forums: Ren'Py Cookbook Directory</a>
+          <code>Ren'Py</code>
+        </li>
+      </ul>
+      <hr>
+      <h2>Tools</h2>
+      <ul>
+        <li>
+          <a href="https://gameresourcesviewer.ru/">RPA Extractor Online</a>
+          <span>- A powerful web application for viewing and extracting resources from Ren'Py and RPG Maker games. In addition, it is also possible to edit saves.</span>
+        </li>
+        <li>
+          <a href="https://ruffle.rs/">Ruffle</a>
+          <span>- A Flash Player emulator that runs old Flash games in the browser</span>
+        </li>
+        <li>
+          <a href="https://github.com/SeriousCache/UABE">Unity Asset Bundle Extractor</a>
+          <span>- A tool to extract the asset bundles of Unity games</span>
+        </li>
+        <li>
+          <a href="https://dreamsavior.net/translator-the-introduction/">Translator++</a>
+          <span>- Tool to easily translate games (RPG Makers, Wolf RPG Editor, RenPy, KiriKiri)</span>
+        </li>
+        <li>
+          <a href="http://github.grumdrig.com/jsfxr/">jsfxr</a>
+          <span>- Online tool to generate simple sound effects</span>
+        </li>
+      </ul>
+      <hr>
+      <h2>2D Software</h2>
+      <ul>
+        <li>
+          <a href="https://brashmonkey.com/">Spriter Pro / Spriter 2</a>
+          <span>- Tool for creating sprite sheets and 2D animations for use in games</span>
+        </li>
+        <li>
+          <a href="https://dragonbones.github.io/en/animation.html">DragonBones Animation Solution</a>
+          <span>- Set of tools for creating and managing sprite animations, as well as a runtime for integrating the animations into games</span>
+        </li>
+      </ul>
+      <h2>3D Software</h2>
+      <ul>
+        <li>
+          <a href="https://www.daz3d.com/">Daz 3D</a>
+          <span>- 3D content creation software platform that includes a 3D modeling and animation application, a character creator, and a library of 3D content including models, materials, poses, and animations</span>
+        </li>
+        <li>
+          <a href="https://hub.virtamate.com/">Virt-A-Mate</a>
+          <span>- Virtual reality interactive sex simulator and sandbox. It can be used as a creative tool for making adult content.</span>
+        </li>
+        <li>
+          <a href="https://www.blender.org/">Blender</a>
+          <span>- 3D computer graphics software toolset used for creating animated films, visual effects, art, motion graphics, interactive 3D applications, and computer games</span>
+        </li>
+        <li>
+          <a href="https://www.reallusion.com/character-creator/">Character Creator 4</a>
+          <span>- 3D character design and customization software that allows users to create and customize realistic human characters for use in games and animations</span>
+        </li>
+        <li>
+          <a href="https://www.reallusion.com/iclone/">iClone 8</a>
+          <span>- 3D animation software that allows users to create and customize 3D characters, as well as create and render 3D animations and visual effects</span>
+        </li>
+        <li>
+          <a href="https://www.posersoftware.com/">Poser</a>
+          <span>- 3D computer graphics software program that allows users to create and customize human and animal figures, as well as create 3D scenes and animations</span>
+        </li>
+        <li>
+          <a href="https://cascadeur.com/">Cascadeur</a>
+          <span>- 3D animation software that allows users to create realistic physics-based character animations, such as walking, running, jumping, and fighting</span>
+        </li>
+      </ul>
+      <hr>
+      <h2>Game Engines</h2>
+      <h3>Ren'Py</h3>
+      <p>Ren'Py is a visual novel engine that helps you create interactive stories using words, images, and sounds. It is open-source and easy to use, with features such as branching storylines and customizable character sprites. Ren'Py is commonly used to create dating sims and visual novels.</p>
+      <table role="grid">
+        <tr>
+          <td><b>Supported genres</b></td>
+          <td>Visual Novels, Dating Simulations, Life Simulations</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>Free (open source)</td>
+        </tr>
+        <tr>
+          <td><b>Commercial use allowed</b></td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><b>Where does it run</b></td>
+          <td>Windows, macOS, Linux, iOS, Android, Browser (beta)</td>
+        </tr>
+        <tr>
+          <td><b>Requires programming skills</b></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><b>Scripting languages</b></td>
+          <td>Own, Python (optionally)</td>
+        </tr>
+      </table>
+      <h4>Ren'Py Resources</h4>
+      <ul>
+        <li><a href="https://www.renpy.org/">Official Ren'Py Website</a></li>
+        <li><a href="https://www.renpy.org/doc/html/quickstart.html">Official Quickstart Manual</a></li>
+        <li>🔞 <a href="https://itch.io/game-assets/tag-renpy">itch.io - Ren'Py Game Assets</a></li>
+        <li>
+          🔞 <a href="https://games.renpy.org/">Official Ren'Py Games List</a>
+          <span>- This official game list tries to catalog all games created with Ren'Py. You can add your game for free.</span>
+        </li>
+      </ul>
+      <hr>
+      <h3>Unity</h3>
+      <p>Unity is a cross-platform game engine used to develop video games for PC, consoles, mobile devices, and websites. It offers a suite of tools and services for creating 2D, 3D, AR, and VR games, as well as an integrated development environment (IDE) for writing and debugging code. Unity is popular among developers because of its flexibility and the ability to deploy games to multiple platforms with minimal effort.</p>
+      <table role="grid">
+        <tr>
+          <td><b>Supported genres</b></td>
+          <td>All 2D & 3D genres</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>Free and paid plans available</td>
+        </tr>
+        <tr>
+          <td><b>Commercial use allowed</b></td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><b>Where does it run</b></td>
+          <td>Windows, macOS, Linux, iOS, Android, Browser</td>
+        </tr>
+        <tr>
+          <td><b>Requires programming skills</b></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><b>Scripting languages</b></td>
+          <td>Unity Visual Scripting, C#</td>
+        </tr>
+      </table>
+      <h4>Unity Resources</h4>
+      <ul>
+        <li><a href="https://unity.com/">Official Unity Website</a></li>
+        <li>
+          <a href="https://learn.unity.com/">Unity Learn</a>
+          <span>- Learning content for all experience levels</span>
+        </li>
+        <li>🔞 <a href="https://itch.io/game-assets/tag-unity">itch.io - Unity Game Assets</a></li>
+      </ul>
+      <hr>
+      <h3>Unreal Engine</h3>
+      <p>Unreal Engine is a powerful game engine developed by Epic Games. It is used to create games for PC, console, mobile, and virtual reality devices. Unreal Engine features an integrated development environment (IDE) with a visual scripting system, a physics engine, and support for a wide range of graphics APIs and platforms. It is known for its cutting-edge graphics capabilities and is often used to create visually stunning games.</p>
+      <table role="grid">
+        <tr>
+          <td><b>Supported genres</b></td>
+          <td>All 3D genres</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>Free and paid plans available</td>
+        </tr>
+        <tr>
+          <td><b>Commercial use allowed</b></td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><b>Where does it run</b></td>
+          <td>Windows, macOS, Linux, iOS, Android</td>
+        </tr>
+        <tr>
+          <td><b>Requires programming skills</b></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><b>Scripting languages</b></td>
+          <td>Blueprint (Visual Scripting), C++</td>
+        </tr>
+      </table>
+      <h4>Unreal Engine Resources</h4>
+      <ul>
+        <li><a href="https://www.unrealengine.com/">Official Unreal Engine Website</a></li>
+        <li><a href="https://docs.unrealengine.com/5.1/en-US/">Official Unreal Engine Documentation</a></li>
+        <li><a href="https://forums.unrealengine.com/categories">Official Unreal Engine Forum</a></li>
+        <li>🔞 <a href="https://itch.io/game-assets/tag-unreal-engine">itch.io - Unreal Engine Game Assets</a></li>
+      </ul>
+      <hr>
+      <h3>Rpg Maker (MZ, MV, VX, XP, 2003)</h3>
+      <p>RPG Maker (also known as RM) is a set of game development tools that allows users to create their own role-playing games (RPGs). It includes a visual editor, a scripting language, and a range of assets such as character sprites, backgrounds, and music. RPG Maker is available in a variety of versions, each with increasing levels of complexity and features. It is popular among game developers because of its ease of use and the ability to create games quickly.</p>
+      <table role="grid">
+        <tr>
+          <td><b>Supported genres</b></td>
+          <td>2D Role-playing games</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>Depends on version</td>
+        </tr>
+        <tr>
+          <td><b>Commercial use allowed</b></td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><b>Where does it run</b></td>
+          <td>Windows, macOS, iOS, Android, Browser</td>
+        </tr>
+        <tr>
+          <td><b>Requires programming skills</b></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><b>Scripting languages</b></td>
+          <td>Depends on version, newer versions use JavaScript</td>
+        </tr>
+      </table>
+      <h4>Rpg Maker Resources</h4>
+      <ul>
+        <li><a href="https://www.rpgmakerweb.com/">Official Rpg Maker Website</a></li>
+        <li><a href="https://www.rpgmakerweb.com/tutorials">Official Rpg Maker Tutorials</a></li>
+        <li><a href="https://forums.rpgmakerweb.com/">Official Rpg Maker Forum</a></li>
+        <li><a href="https://rpgmaker.net/forums/">rpgmaker.net Forum</a></li>
+        <li>🔞 <a href="https://itch.io/game-assets/tag-rpgmaker">itch.io - Rpg Maker Game Assets</a></li>
+      </ul>
+      <hr>
+      <h3>Twine</h3>
+      <p>Twine is a free, open-source tool for creating interactive fiction games, also known as "choose your own adventure" games. It allows users to create branching storylines using simple formatting and hyperlinks, and supports the use of images and sound. Twine is web-based and can be used in any modern web browser, making it easy to use and share games with others. It is often used by developers to create interactive fiction games, educational materials, and other interactive content.</p>
+      <table role="grid">
+        <tr>
+          <td><b>Supported genres</b></td>
+          <td>Text-based browser games</td>
+        </tr>
+        <tr>
+          <td><b>Price</b></td>
+          <td>Free (open source)</td>
+        </tr>
+        <tr>
+          <td><b>Commercial use allowed</b></td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td><b>Where does it run</b></td>
+          <td>Browser</td>
+        </tr>
+        <tr>
+          <td><b>Requires programming skills</b></td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><b>Scripting languages</b></td>
+          <td>JavaScript</td>
+        </tr>
+      </table>
+      <h4>Twine Resources</h4>
+      <ul>
+        <li><a href="https://twinery.org/">Official Twine Website</a></li>
+        <li><a href="https://twinery.org/reference/en/">Official Twine Reference</a></li>
+        <li><a href="https://twinery.org/forum/">Official Twine Forum</a></li>
+        <li>🔞 <a href="https://itch.io/game-assets/tag-twine">itch.io - Twine Game Assets</a></li>
+      </ul>
+      <hr>
+      <h3>Others</h3>
+      <ul>
+        <li>
+          <a href="https://www.rpgmakerweb.com/products/visual-novel-maker">Visual Novel Maker</a>
+          <span>- Game development engine specifically designed for creating visual novels and other interactive fiction games</span>
+        </li>
+        <li>
+          <a href="https://godotengine.org/">Godot Engine</a>
+          <span>- Game engine for creating 2D and 3D games</span>
+        </li>
+        <li>
+          <a href="https://kirill-live.itch.io/tuesday-js">Tuesday Visual Novel Engine</a>
+          <span>- Game development engine designed for creating visual novels</span>
+        </li>
+        <li>
+          <a href="https://www.moddb.com/engines/wolf-rpg-editor">Wolf RPG Editor</a>
+          <span>- Game development tool for creating role-playing games</span>
+        </li>
+        <li>
+          <a href="https://www.nyu-media.com/tyranobuilder-visual-novel-studio">TyranoBuilder</a>
+          <span>- Visual novel creation tool that allows users to easily create interactive story-based games with a drag-and-drop interface</span>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <a href="#">Back to top</a> | <a href="https://github.com/porngamedev/porn-game-resources">GitHub Repository</a>
+    </footer>
+  </body>
+</html>
